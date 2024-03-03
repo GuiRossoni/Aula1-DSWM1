@@ -1,0 +1,377 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root {
+  --cor1: #030a1d;
+  --cor2: #fb6d94;
+  --cor3: #EDEDED;
+  --font-padrao: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-padrao);
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cor1);
+  display: flex;
+  justify-content: center;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--cor2);
+}
+
+main {
+  width: 1120px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: var(--cor1);
+  box-shadow: 0 1px 0 var(--cor2);
+  max-width: 1120px;
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--cor3);
+}
+
+nav.nav-list a[href="#home"]:hover,
+nav.nav-list a[href="#home"]:active,
+nav.nav-list a[href="#projects"]:hover,
+nav.nav-list a[href="#projects"]:active,
+nav.nav-list a[href="#contact"]:hover,
+nav.nav-list a[href="#contact"]:active {
+  color: var(--cor2);
+}
+
+nav.nav-list a[href="#home"]:active,
+nav.nav-list a[href="#projects"]:active,
+nav.nav-list a[href="#contact"]:active {
+  color: var(--cor3);
+}
+
+section#home {
+  height: calc(100vh + 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px 20px;
+  width: 100%;
+}
+
+#home h2,
+#home span {
+  color: var(--cor3);
+}
+
+.home-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: justify;
+}
+
+.box_botao {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.box_botao a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background-color: var(--cor2);
+  border: 2px solid var(--cor2);
+  border-radius: 10px;
+  font-size: 20px;
+  color: var(--cor1);
+  text-decoration: none;
+  font-weight: 600px;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.box_botao a {
+  background-color: transparent;
+  color: var(--cor2);
+}
+
+.box_botao a:hover {
+  color: var(--cor1);
+}
+
+.box_botao a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--cor2);
+  z-index: -1;
+  transition: .5s;
+}
+
+.box_botao a:hover::before {
+  width: 100%;
+}
+
+.links_contato {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 120px;
+  width: 200px;
+  opacity: 1;
+}
+
+.links_contato a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid var(--cor2);
+  border-radius: 10px;
+  font-size: 20px;
+  color: var(--cor2);
+  text-decoration: none;
+  z-index: 1;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.links_contato a:hover {
+  color: var(--cor1);
+}
+
+.links_contato a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--cor2);
+  z-index: -1;
+  transition: .5s;
+}
+
+.links_contato a:hover::before {
+  width: 100%;
+}
+
+.home-img {
+  border-radius: 50px;
+  max-width: 300px;
+  align-items: center;
+  margin: 30px;
+}
+
+.home-img img {
+  border-radius: 50px;
+  max-width: 300px;
+  align-items: center;
+  margin: 30px;
+}
+
+#projects h2,
+#projects p {
+  color: var(--cor3);
+}
+
+section#projects {
+  height: calc(100vh + 80px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.project-img {
+  width: 50%;
+}
+
+.project-img img {
+  box-shadow: 0 1px 2px rgba(221, 221, 221, 0.2);
+  object-fit: cover;
+  width: 80%;
+}
+
+.project-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.swiper {
+  width: 95vw;
+  height: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--cor2);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--cor2);
+}
+
+#contact h2 {
+  color: var(--cor3);
+}
+
+#contact {
+  height: calc(100vh + 80px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  width: 100%;
+  padding: 5px 20px;
+}
+
+input,
+textarea,
+button {
+  box-shadow: 0 1px 2px var(--cor3);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+}
+
+#contact form button {
+  background-color: var(--cor2);
+  color: var(--cor3);
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#contact form button:hover {
+  opacity: 1;
+}
+
+#footer {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor2);
+}
+
+footer {
+  box-shadow: 0px -1px 0px 0px var(--cor2);
+  padding: 50px;
+  text-align: center;
+  color: var(--cor3);
+}
+
+@media (max-width: 450px) {
+  header {
+    justify-content: center;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  section#home {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .home-info,
+  .home-img {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .swiper-slide {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .project-img {
+    width: 100%;
+  }
+
+  .project-info {
+    width: 80%;
+  }
+
+  .links_contato {
+    bottom: 30px;
+    width: 160px;
+  }
+
+  .links_contato a {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+}
